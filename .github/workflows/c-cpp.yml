@@ -4,9 +4,16 @@ on:
   push:
     branches: [ "master" ]
   pull_request:
-    branches: [ "master" ]
-
+    branches: [ "master" ] 
 jobs:
+
+  cloneUsblib:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: cloneUSB
+      run: mkdir ./thridPart & cd thridPart &  gh repo clone Gravity-of-eath/libusb
+
   build:
 
     runs-on: windows-latest
