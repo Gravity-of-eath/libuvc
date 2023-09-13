@@ -7,9 +7,19 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+env:
+    GH_TOKEN: ${{ github.token }}
 
 jobs:
+  cloneUsblib:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: cloneUSB
+      run: mkdir ./LibUSB & cd LibUSB &  gh repo clone Gravity-of-eath/libusb & ls -l
+
   build:
+    needs: cloneUsblib
     runs-on: ${{ matrix.os }}
 
     strategy:
