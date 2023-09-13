@@ -10,7 +10,15 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  cloneUsblib:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: cloneUSB
+      run: mkdir ./thridPart & cd thridPart &  gh repo clone Gravity-of-eath/libusb
   build:
+    needs: cloneUsblib
     runs-on: ubuntu-latest
 
     steps:
