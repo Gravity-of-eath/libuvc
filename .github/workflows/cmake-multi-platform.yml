@@ -21,6 +21,12 @@ jobs:
       run: mv ./libusb ./LibUSB
     - name: display dir1
       run: ls -l ./LibUSB/
+  buildUsblib:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: buildUsblib
+      run: cd ./LibUSB & make& make install
 
   build:
     needs: cloneUsblib
