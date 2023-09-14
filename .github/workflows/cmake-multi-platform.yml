@@ -20,11 +20,11 @@ jobs:
     - name: renameDir
       run: mv ./libusb ./LibUSB
     - name: display dir1
-      run: ls -l  & cd ./LibUSB/ 
+      run: ls -l   
     - name: display dir2
-      run: ls -l 
+      run: ls -l ./LibUSB/ 
     - name: buildUsblib
-      run: bash ./autogen.sh & make 
+      run: bash ./LibUSB/autogen.sh & make 
 
   build:
     needs: cloneUsblib
