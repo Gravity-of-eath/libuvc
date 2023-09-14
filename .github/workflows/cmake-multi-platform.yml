@@ -20,10 +20,9 @@ jobs:
     - name: renameDir
       run: mv ./libusb ./LibUSB
     - name: display dir1
+      run: ls -l  
+    - name: display dir2
       run: ls -l ./LibUSB/ 
-    - uses: actions/checkout@v3
-    - name: showDir
-      run: ls -la
     - name: buildUsblib
       run: cd ./LibUSB & ./autogen.sh & make 
 
