@@ -20,11 +20,7 @@ jobs:
     - name: renameDir
       run: mv ./libusb ./LibUSB
     - name: display dir1
-      run: ls -l ./LibUSB/
-  buildUsblib:
-    needs: cloneUsblib
-    runs-on: ubuntu-latest
-    steps:
+      run: ls -l ./LibUSB/ 
     - uses: actions/checkout@v3
     - name: showDir
       run: ls -la
@@ -32,7 +28,7 @@ jobs:
       run: cd ./LibUSB & ./autogen.sh & make 
 
   build:
-    needs: buildUsblib
+    needs: cloneUsblib
     runs-on: ${{ matrix.os }}
 
     strategy:
