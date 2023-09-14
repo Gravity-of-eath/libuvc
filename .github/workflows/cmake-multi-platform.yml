@@ -17,9 +17,9 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: installUSBlib
-      run: apt-get install libusb-dev
+      run: sudo apt-get install libusb-dev
     - name: install1
-      run: apt-get install libusb
+      run: sudu apt-get install libusb
     # - name: cloneUSB
     #   run: gh repo clone Gravity-of-eath/libusb & ls -l 
     # - name: renameDir
