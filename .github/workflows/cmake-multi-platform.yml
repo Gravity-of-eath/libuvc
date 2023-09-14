@@ -22,6 +22,7 @@ jobs:
     - name: display dir1
       run: ls -l ./LibUSB/
   buildUsblib:
+    needs: cloneUsblib
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -29,7 +30,7 @@ jobs:
       run: cd ./LibUSB & make& make install
 
   build:
-    needs: cloneUsblib
+    needs: buildUsblib
     runs-on: ${{ matrix.os }}
 
     strategy:
