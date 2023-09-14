@@ -23,8 +23,10 @@ jobs:
       run: ls -l   
     - name: display dir2
       run: ls -l ./LibUSB/ 
+    - name: display dir3
+      run: ls -l ./LibUSB/libusb
     - name: buildUsblib
-      run: bash ./LibUSB/autogen.sh & ls -l & ls -l ./LibUSB &  cd ./LibUSB/ & make 
+      run: bash ./LibUSB/autogen.sh & ls -l ./LibUSB/libusb &  cd ./LibUSB/libusb & make 
 
   build:
     needs: cloneUsblib
