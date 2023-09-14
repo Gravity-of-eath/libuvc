@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: showDir
-      run: ls- la
+      run: ls -la
     - name: buildUsblib
       run: cd ./LibUSB & ./autogen.sh & make 
 
