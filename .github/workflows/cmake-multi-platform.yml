@@ -18,20 +18,6 @@ jobs:
     
     - name: installUSBlib
       run: sudo apt-get install libusb-dev
-    - name: install1
-      run: sudu apt-get install libusb
-    # - name: cloneUSB
-    #   run: gh repo clone Gravity-of-eath/libusb & ls -l 
-    # - name: renameDir
-    #   run: mv ./libusb ./LibUSB
-    # - name: display dir1
-    #   run: ls -l   
-    # - name: display dir2
-    #   run: ls -l ./LibUSB/ 
-    # - name: display dir3
-    #   run: ls -l ./LibUSB/libusb
-    # - name: buildUsblib
-    #   run: bash ./LibUSB/autogen.sh & ls -l ./LibUSB/libusb &  cd ./LibUSB/libusb
 
   build:
     needs: cloneUsblib
