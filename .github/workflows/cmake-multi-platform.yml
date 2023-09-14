@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: buildUsblib
-      run: cd ./LibUSB & make& make install
+      run: cd ./LibUSB & make 
 
   build:
     needs: buildUsblib
